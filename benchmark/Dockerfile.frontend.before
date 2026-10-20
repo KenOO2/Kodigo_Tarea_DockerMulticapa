@@ -1,0 +1,11 @@
+# "ANTES": enfoque ingenuo de una sola etapa. Solo sirve de referencia para medir.
+# - Imagen base completa (Debian), no alpine
+# - Se copia todo el proyecto y se instalan TODAS las dependencias en la imagen final
+# - Cualquier cambio de código invalida la capa de `npm install`
+FROM node:20
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "start"]

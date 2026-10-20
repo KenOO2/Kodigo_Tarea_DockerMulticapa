@@ -1,0 +1,10 @@
+# Secretos / configuración local: NUNCA al repositorio
+.env
+.env.*
+!.env.example
+
+# Sistema / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

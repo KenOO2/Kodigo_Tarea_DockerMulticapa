@@ -1,0 +1,14 @@
+-- Script OPCIONAL de inicialización de MySQL.
+--
+-- La imagen oficial ejecuta aquí (/docker-entrypoint-initdb.d/) los .sql/.sh
+-- en orden alfabético, UNA sola vez: la primera vez que arranca con el volumen
+-- `db_data` vacío. Si ya existe el volumen, no se vuelven a ejecutar
+-- (para forzarlo: `docker compose down -v`).
+--
+-- La base de datos y el usuario los crea la propia imagen a partir de
+-- MYSQL_DATABASE / MYSQL_USER / MYSQL_PASSWORD. Las TABLAS y datos de demo los
+-- crea Laravel (migraciones + seeders) al arrancar el contenedor `backend`,
+-- por eso aquí no se define ningún esquema: evitaría duplicar y desincronizar.
+--
+-- Úsalo para lo que Laravel no cubre (extensiones, permisos extra, etc.).
+SELECT 'init.sql ejecutado' AS info;

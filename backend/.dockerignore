@@ -1,0 +1,30 @@
+# Dependencias: se instalan DENTRO de la imagen
+vendor
+node_modules
+
+# Secretos y config local: nunca dentro de una imagen
+.env
+.env.*
+
+# Control de versiones / IDE
+.git
+.gitignore
+.idea
+.vscode
+
+# Estado de ejecución (se crea en el contenedor)
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/api-docs
+bootstrap/cache/*
+
+# No hacen falta en producción
+tests
+phpunit.xml
+.phpunit.result.cache
+Dockerfile
+.dockerignore
+README.md
+*.md
